@@ -5,25 +5,25 @@ import java.util.InputMismatchException;
 public class Exercise {
     public static void main(String[] args) {
         int dimension;
-        int primes=0;
+        int primes=0; // Contador de números primos
 
         dimension = readDim();
-        int [] vector;
-        vector = new int [dimension];
+        int [] vector; // Se declara arreglo unidimensional que recibe números enteros
+        vector = new int [dimension]; // Se inicializa el arreglo
 
-        fillVector(vector);
+        fillVector(vector); // Se rellena de números enteros
         System.out.println("Arreglo de números");
-        showVector(vector);
+        showVector(vector); // Se muestran los números del arreglo
 
         for (int pos=0; pos < vector.length; pos++) {
             if(isPrime(vector[pos])) primes++;
         }
 
-        int [] vectorPrimes = new int [primes];
+        int [] vectorPrimes = new int [primes]; // Arreglo que almacenará los números primos
 
         copyVectors(vector, vectorPrimes);
-        System.out.println("Números primis");
-        showVector(vectorPrimes);
+        System.out.println("Números primos");
+        showVector(vectorPrimes); // Mostrar arreglos de números primos
     }
 
 
@@ -39,7 +39,7 @@ public class Exercise {
 
     }
 
-    private static boolean isPrime(int number){
+    public static boolean isPrime(int number){
         boolean prime = true;
         if (number == 0) {
             prime = false;
