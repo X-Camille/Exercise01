@@ -26,7 +26,6 @@ public class Exercise {
         showVector(vectorPrimes); // Mostrar arreglos de números primos
     }
 
-
     private static int readDim(){
         return 3;
     }
