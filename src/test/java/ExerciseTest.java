@@ -1,5 +1,5 @@
-import org.junit.jupiter.api.Test;
 import org.example.Exercise;
+import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ExerciseTest {
@@ -35,5 +35,4 @@ public class ExerciseTest {
     public void probarNumeroNoPrimoLargo(){
         assertFalse(Exercise.isPrime(100000));
     }
-
 }

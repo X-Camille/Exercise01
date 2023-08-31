@@ -1,9 +1,14 @@
 package org.example;
 import java.util.Scanner;
 import java.util.InputMismatchException;
+import java.util.Random;
 
 public class Exercise {
     public static void main(String[] args) {
+        iniciarPrograma();
+    }
+
+    private static void iniciarPrograma(){
         int dimension;
         int primes=0; // Contador de números primos
 
@@ -26,22 +31,32 @@ public class Exercise {
         showVector(vectorPrimes); // Mostrar arreglos de números primos
     }
 
-
     private static int readDim(){
-        return 3;
+        System.out.println("Ingrese la cantidad de columnas del arreglo:");
+        Scanner scanner = new Scanner(System.in);
+        int dimension = scanner.nextInt();
+        return dimension;
     }
 
     private static void fillVector(int vec[]) {
+        Random random = new Random();
+
+        for(int i=0; i<vec.length; i++) {
+            vec[i] = random.nextInt(100);
+        }
 
     }
 
     private static void showVector(int [] vec){
-
+        for(int numero: vec) {
+            System.out.print(numero + " ");
+        }
+        System.out.println();
     }
 
     public static boolean isPrime(int number){
         boolean prime = true;
-        if (number == 0) {
+        if (number <= 0) { // Se agregó el <= a 0, para que no considere como primos a los números negativos
             prime = false;
         }
         if (number == 1) {
